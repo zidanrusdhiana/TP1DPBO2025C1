@@ -7,9 +7,9 @@ Saya Mochamad Zidan Rusdhiana dengan NIM 2305464 mengerjakan Tugas Praktikum 1 d
 Input jumlah data yang ingin dimasukkan sebanyak n (misal 3)
 Urutan format masukan adalah: ID, Nama Produk, Kategori, Harga
 Contoh TC yang digunakan:
-1 whiskas makanan_kucing 30000
+```1 whiskas makanan_kucing 30000
 2 dettol shampo 40000
-3 maria_wall kandang 90000
+3 maria_wall kandang 90000```
 
 Setelah itu user dapat melakukan 5 aksi:
 1. Tambah Data, user dapat menambahkan data baru
