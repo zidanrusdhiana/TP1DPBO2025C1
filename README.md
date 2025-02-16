@@ -4,7 +4,7 @@
 Saya Mochamad Zidan Rusdhiana dengan NIM 2305464 mengerjakan Tugas Praktikum 1 dalam mata kuliah Desain dan Pemrograman Berorientasi Objek untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
 
 ## Alur Program
-Input jumlah data yang ingin dimasukkan sebanyak n (misal 3), lalu urutan format masukan adalah: ID, Nama Produk, Kategori, Harga
+Input jumlah data yang ingin dimasukkan sebanyak n (misal 3), lalu urutan format masukan adalah: ID, Nama Produk, Kategori, Harga.
 Contoh TC yang digunakan:
 ```
 1 whiskas makanan_kucing 30000
