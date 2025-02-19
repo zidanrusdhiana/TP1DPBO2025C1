@@ -18,3 +18,4 @@ Setelah itu user dapat melakukan 5 aksi:
 3. Hapus Data, user dapat menghapus data berdasarkan ID produk yang ingin dihapus
 4. Cari Data, user dapat mencari data berdasarkan ID produk yang ingin dicari
 5. Keluar, user dapat memilih 5 untuk keluar dari program
+6. Tampilkan semua data
