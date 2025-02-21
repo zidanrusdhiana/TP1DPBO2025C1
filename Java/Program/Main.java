@@ -51,113 +51,128 @@ public class Main{
             System.out.print("\nMasukkan pilihan: ");
 
             pilihan = scanner.nextInt();
-            // menambahkan data baru
-            if(pilihan == 1){
-                System.out.println("Masukkan ID, Nama, Kategori, Harga:");
-                // input data
-                int id = scanner.nextInt();
-                String nama = scanner.next();
-                String kategori = scanner.next();
-                int harga = scanner.nextInt();
+            switch(pilihan){
+                // menambahkan data baru
+                case 1:
+                    System.out.println("Masukkan ID, Nama, Kategori, Harga:");
+                    // input data
+                    int id = scanner.nextInt();
+                    String nama = scanner.next();
+                    String kategori = scanner.next();
+                    int harga = scanner.nextInt();
 
-                // membuat objek PetShop
-                PetShop p = new PetShop(id, nama, kategori, harga);
-                // menambahkan objek PetShop ke listPetShop
-                listPetShop.add(p);
+                    // membuat objek PetShop
+                    PetShop p = new PetShop(id, nama, kategori, harga);
+                    // menambahkan objek PetShop ke listPetShop
+                    listPetShop.add(p);
 
-                System.out.println("Berhasil menambahkan data!");
-            }
-            // mengubah data
-            else if(pilihan == 2){
-                System.out.print("Masukkan ID Produk yang ingin diubah: ");
-                int id = scanner.nextInt();
-                System.out.print("Masukkan Nama Produk: ");
-                String nama = scanner.next();
-                System.out.print("Masukkan Kategori: ");
-                String kategori = scanner.next();
-                System.out.print("Masukkan Harga: ");
-                int harga = scanner.nextInt();
+                    System.out.println("Berhasil menambahkan data!");
+                    break;
 
-                boolean found = false;
-                int i = 0;
-                // mencari data yang akan diubah
-                while(i < listPetShop.size() && !found){
-                    PetShop item = listPetShop.get(i);
-                    // jika id yang dicari ditemukan
-                    if(item.getId() == id){
-                        // mengubah data menggunakan setter
-                        item.setNama(nama);
-                        item.setKategori(kategori);
-                        item.setHarga(harga);
-                        found = true;
+                // mengubah data
+                case 2:
+                    System.out.print("Masukkan ID Produk yang ingin diubah: ");
+                    id = scanner.nextInt();
+                    System.out.print("Masukkan Nama Produk: ");
+                    nama = scanner.next();
+                    System.out.print("Masukkan Kategori: ");
+                    kategori = scanner.next();
+                    System.out.print("Masukkan Harga: ");
+                    harga = scanner.nextInt();
+
+                    boolean found = false;
+                    int i = 0;
+                    // mencari data yang akan diubah
+                    while(i < listPetShop.size() && !found){
+                        PetShop item = listPetShop.get(i);
+                        // jika id yang dicari ditemukan
+                        if(item.getId() == id){
+                            // mengubah data menggunakan setter
+                            item.setNama(nama);
+                            item.setKategori(kategori);
+                            item.setHarga(harga);
+                            found = true;
+                        }
+                        i++;
                     }
-                    i++;
-                }
 
-                if(found){
-                    System.out.println("Berhasil mengubah data!");
-                }
-                else{
-                    System.out.println("Data tidak ditemukan!");
-                }
-            }
-            // menghapus data
-            else if(pilihan == 3){
-                System.out.print("Masukkan ID yang ingin dihapus: ");
-                int id = scanner.nextInt();
+                    if(found){
+                        System.out.println("Berhasil mengubah data!");
+                    }
+                    else{
+                        System.out.println("Data tidak ditemukan!");
+                    }
+                    break;
                 
-                boolean found = false;
-                int i = 0;
-                // mencari data yang akan dihapus
-                while(i < listPetShop.size() && !found){
-                    PetShop item = listPetShop.get(i);
-                    // jika id yang dicari ditemukan
-                    if(item.getId() == id){
-                        // menghapus data
-                        listPetShop.remove(i);
-                        found = true;
-                    }
-                    i++;
-                }
+                // menghapus data
+                case 3:
+                    System.out.print("Masukkan ID yang ingin dihapus: ");
+                    id = scanner.nextInt();
 
-                if(found){
-                    System.out.println("Berhasil menghapus data!");
-                }
-                else{
-                    System.out.println("Data tidak ditemukan!");
-                }
-            }
-            // mencari data
-            else if(pilihan == 4){
-                System.out.print("Masukkan Nama Produk yang ingin dicari: ");
-                String nama = scanner.next();
-                
-                boolean found = false;
-                int i = 0;
-                while(i < listPetShop.size() && !found){
-                    PetShop item = listPetShop.get(i);
-                    // jika nama yang dicari ditemukan
-                    if(item.getNama().equals(nama)){
-                        System.out.println("Detail Produk:");
-                        System.out.println("-----------------------");
-                        item.tampilkanData();
-                        System.out.println("-----------------------");
-                        found = true;
+                    found = false;
+                    i = 0;
+                    // mencari data yang akan dihapus
+                    while(i < listPetShop.size() && !found){
+                        PetShop item = listPetShop.get(i);
+                        // jika id yang dicari ditemukan
+                        if(item.getId() == id){
+                            // menghapus data
+                            listPetShop.remove(i);
+                            found = true;
+                        }
+                        i++;
                     }
-                    i++;
-                }
 
-                if(!found){
-                    System.out.println("Data tidak ditemukan!");
-                }
-            }
-            // menampilkan semua data
-            else if(pilihan == 6){
-                System.out.println("Data Pet Shop:");
-                for(PetShop p : listPetShop){
-                    p.tampilkanData();
-                    System.out.println("-----------------------");
-                }
+                    if(found){
+                        System.out.println("Berhasil menghapus data!");
+                    }
+                    else{
+                        System.out.println("Data tidak ditemukan!");
+                    }
+                    break;
+
+                // mencari data
+                case 4:
+                    System.out.print("Masukkan Nama Produk yang ingin dicari: ");
+                    nama = scanner.next();
+
+                    found = false;
+                    i = 0;
+                    while(i < listPetShop.size() && !found){
+                        PetShop item = listPetShop.get(i);
+                        // jika nama yang dicari ditemukan
+                        if(item.getNama().equals(nama)){
+                            System.out.println("Detail Produk:");
+                            System.out.println("-----------------------");
+                            item.tampilkanData();
+                            System.out.println("-----------------------");
+                            found = true;
+                        }
+                        i++;
+                    }
+
+                    if(!found){
+                        System.out.println("Data tidak ditemukan!");
+                    }
+                    break;
+
+                // menampilkan semua data
+                case 6:
+                    System.out.println("Data Pet Shop:");
+                    for(PetShop pt : listPetShop){
+                        pt.tampilkanData();
+                        System.out.println("-----------------------");
+                    }
+                    break;
+
+                // keluar dari program
+                case 5:
+                    System.out.println("Keluar dari program.");
+                    break;
+
+                default:
+                    System.out.println("Pilihan tidak valid!");
+                    break;
             }
         }
 
